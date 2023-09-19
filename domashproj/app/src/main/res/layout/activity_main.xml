@@ -57,7 +57,7 @@
                 style="@style/ClearButton"
                 android:fontFamily="sans-serif-black"
                 android:text="C"
-                />
+                tools:ignore="TextContrastCheck" />
 
 
             <TextView
