@@ -107,39 +107,35 @@ class MainActivity : AppCompatActivity() {
 
         btn_plus.setOnClickListener{
             setTFSymbol("+")
-            if (result.text.toString().isNotEmpty()){
+            if (input1.getText().toString().trim().isEmpty() && result.text.toString().isNotEmpty())
                 input1.setText(result.text)
-                result.text=""
-            }
             inputText(input2)
             back(input2)
+            result.text=""
         }
         btn_minus.setOnClickListener{
             setTFSymbol("-")
-            if (result.text.toString().isNotEmpty()){
+            if (input1.getText().toString().trim().isEmpty() && result.text.toString().isNotEmpty())
                 input1.setText(result.text)
-                result.text=""
-            }
             inputText(input2)
             back(input2)
+            result.text=""
         }
         btn_mult.setOnClickListener{
             setTFSymbol("*")
-            if (result.text.toString().isNotEmpty()){
+            if (input1.getText().toString().trim().isEmpty() && result.text.toString().isNotEmpty())
                 input1.setText(result.text)
-                result.text=""
-            }
             inputText(input2)
             back(input2)
+            result.text=""
         }
         btn_div.setOnClickListener{
             setTFSymbol("/")
-            if (result.text.toString().isNotEmpty()){
+            if (input1.getText().toString().trim().isEmpty() && result.text.toString().isNotEmpty())
                 input1.setText(result.text)
-                result.text=""
-            }
             inputText(input2)
             back(input2)
+            result.text=""
         }
 
         btn_equal.setOnClickListener{
@@ -202,16 +198,12 @@ class MainActivity : AppCompatActivity() {
 
             }
             "/" -> {
-                if (oper1.contains(".", ignoreCase = true) || oper2.contains(".", ignoreCase = true))
-                    if (oper2.toDouble() != 0.0){
-                        oper1.toDouble() / oper2.toDouble()
-                    } else {
-                        throw ArithmeticException("Division by 0")
-                    }
-                else
-                    if (oper2.toInt() != 0){
+                if (oper2.toDouble() != 0.0) {
+                    if ((oper1.toDouble() / oper2.toDouble()).toString().contains(".0", ignoreCase = true))
                         oper1.toInt() / oper2.toInt()
-                    } else {
+                    else
+                        oper1.toDouble() / oper2.toDouble()
+                } else {
                     throw ArithmeticException("Division by 0")
                 }
             } else -> {0}
