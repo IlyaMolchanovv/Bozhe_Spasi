@@ -1,0 +1,150 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity">
+
+    <Button
+        android:id="@+id/btn_right"
+        android:layout_width="67dp"
+        android:layout_height="68dp"
+        android:layout_marginEnd="64dp"
+        android:backgroundTint="#FF9800"
+        android:text="→"
+        android:textAlignment="center"
+        android:textSize="24sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/btn_left"
+        app:srcCompat="@android:drawable/ic_media_play" />
+
+    <Button
+        android:id="@+id/btn_left"
+        android:layout_width="67dp"
+        android:layout_height="68dp"
+        android:layout_marginStart="64dp"
+        android:layout_marginTop="60dp"
+        android:backgroundTint="#FF9800"
+        android:text="←"
+        android:textSize="24sp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/linearLayout"
+        app:srcCompat="@android:drawable/ic_media_play" />
+
+    <Button
+        android:id="@+id/btn_add"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="28dp"
+        android:layout_marginTop="48dp"
+        android:backgroundTint="#24E30E"
+        android:text="Добавить"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/btn_left"
+        app:layout_constraintVertical_bias="0.068" />
+
+    <Button
+        android:id="@+id/btn_edit"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:backgroundTint="#FFC107"
+        android:text="Изменить"
+        app:layout_constraintEnd_toStartOf="@+id/btn_delete"
+        app:layout_constraintStart_toEndOf="@+id/btn_add"
+        app:layout_constraintTop_toTopOf="@+id/btn_add" />
+
+    <Button
+        android:id="@+id/btn_delete"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="28dp"
+        android:backgroundTint="#EF5353"
+        android:text="Удалить"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/btn_edit" />
+
+    <LinearLayout
+        android:id="@+id/linearLayout"
+        android:layout_width="323dp"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.28">
+
+        <TextView
+            android:id="@+id/txt_brand_car"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Бренд"
+            android:textSize="16sp" />
+
+        <TextView
+            android:id="@+id/written_brand"
+            android:layout_width="match_parent"
+            android:layout_height="40dp"
+            android:textColor="#EAE2E2"
+            android:textSize="24sp" />
+
+        <TextView
+            android:id="@+id/txt_model_car"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Модель"
+            android:textSize="16sp" />
+
+        <TextView
+            android:id="@+id/written_model"
+            android:layout_width="match_parent"
+            android:layout_height="40dp"
+            android:textColor="#EAE2E2"
+            android:textSize="24sp" />
+
+        <TextView
+            android:id="@+id/txt_color_car"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Цвет"
+            android:textSize="16sp" />
+
+        <TextView
+            android:id="@+id/written_color"
+            android:layout_width="match_parent"
+            android:layout_height="40dp"
+            android:textColor="#EAE2E2"
+            android:textSize="24sp" />
+
+        <TextView
+            android:id="@+id/txt_mileage_car"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Пробег"
+            android:textSize="16sp" />
+
+        <TextView
+            android:id="@+id/written_mileage"
+            android:layout_width="match_parent"
+            android:layout_height="40dp"
+            android:textColor="#EAE2E2"
+            android:textSize="24sp" />
+
+        <TextView
+            android:id="@+id/txt_cost_car"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Цена"
+            android:textSize="16sp" />
+
+        <TextView
+            android:id="@+id/written_cost"
+            android:layout_width="match_parent"
+            android:layout_height="40dp"
+            android:textColor="#EAE2E2"
+            android:textSize="24sp" />
+    </LinearLayout>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

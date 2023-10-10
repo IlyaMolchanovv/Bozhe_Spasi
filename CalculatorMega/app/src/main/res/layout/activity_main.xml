@@ -15,9 +15,11 @@
         android:layout_weight="1"
         android:ellipsize="end"
         android:ems="10"
-        android:focusableInTouchMode="false"
+        android:focusableInTouchMode="true"
+        android:focusable="true"
+        android:clickable="true"
         android:gravity="end"
-        android:inputType="text"
+        android:inputType="numberDecimal"
         android:singleLine="true"
         tools:ignore="Autofill,LabelFor,SpeakableTextPresentCheck,TouchTargetSizeCheck"
         app:layout_constraintStart_toStartOf="parent"
@@ -41,9 +43,11 @@
         android:layout_weight="1"
         android:ellipsize="end"
         android:ems="10"
-        android:focusableInTouchMode="false"
+        android:focusableInTouchMode="true"
+        android:focusable="true"
+        android:clickable="true"
         android:gravity="end"
-        android:inputType="text"
+        android:inputType="numberDecimal"
         android:singleLine="true"
         tools:ignore="Autofill,LabelFor,SpeakableTextPresentCheck,TouchTargetSizeCheck"
         app:layout_constraintEnd_toEndOf="parent"
@@ -119,19 +123,6 @@
         app:layout_constraintTop_toBottomOf="@+id/btn_4" />
 
     <Button
-        android:id="@+id/btn_equal"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:backgroundTint="#2EFF00"
-        android:minWidth="90dip"
-        android:minHeight="90dip"
-        android:text="="
-        android:textColor="@color/white"
-        android:textSize="24sp"
-        app:layout_constraintEnd_toEndOf="@+id/btn_minus"
-        app:layout_constraintTop_toTopOf="@+id/btn_div" />
-
-    <Button
         android:id="@+id/btn_div"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
@@ -140,6 +131,19 @@
         android:minHeight="90dip"
         android:text="/"
         android:textColor="#2EFF00"
+        android:textSize="24sp"
+        app:layout_constraintEnd_toEndOf="@+id/btn_minus"
+        app:layout_constraintTop_toTopOf="@+id/btn_equal" />
+
+    <Button
+        android:id="@+id/btn_equal"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:backgroundTint="#2EFF00"
+        android:minWidth="90dip"
+        android:minHeight="90dip"
+        android:text="="
+        android:textColor="@color/white"
         android:textSize="24sp"
         app:layout_constraintEnd_toEndOf="@+id/btn_3"
         app:layout_constraintTop_toTopOf="@+id/btn_0" />

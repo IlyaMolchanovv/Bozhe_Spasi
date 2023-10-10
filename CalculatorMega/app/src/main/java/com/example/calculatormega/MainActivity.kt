@@ -8,6 +8,7 @@ import android.view.inputmethod.InputMethodManager
 import android.widget.Button
 import android.widget.EditText
 import android.widget.TextView
+import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 
 
@@ -112,6 +113,8 @@ class MainActivity : AppCompatActivity() {
             inputText(input2)
             back(input2)
             result.text=""
+            input2.error = null
+
         }
         btn_minus.setOnClickListener{
             setTFSymbol("-")
@@ -120,6 +123,8 @@ class MainActivity : AppCompatActivity() {
             inputText(input2)
             back(input2)
             result.text=""
+            input2.error = null
+
         }
         btn_mult.setOnClickListener{
             setTFSymbol("*")
@@ -128,6 +133,8 @@ class MainActivity : AppCompatActivity() {
             inputText(input2)
             back(input2)
             result.text=""
+            input2.error = null
+
         }
         btn_div.setOnClickListener{
             setTFSymbol("/")
@@ -136,20 +143,42 @@ class MainActivity : AppCompatActivity() {
             inputText(input2)
             back(input2)
             result.text=""
+            input2.error = null
         }
 
         btn_equal.setOnClickListener{
-            if (input1.getText().toString().trim().isNotEmpty() && input2.getText().toString().trim().isNotEmpty())
+            if (input1.getText().toString().trim().isNotEmpty() && input2.getText().toString().trim().isNotEmpty()) {
                 result.text = calcRes(symbol.text.toString()).toString()
-            else if (input1.getText().toString().trim().isNotEmpty())
-                result.text = input1.getText().toString()
-            else if (input2.getText().toString().trim().isNotEmpty())
-                result.text = input2.getText().toString()
-            input1.setText("")
-            input2.setText("")
-            symbol.text = ""
-            inputText(input1)
-            back(input1)
+                input1.setText("")
+                input2.setText("")
+                symbol.text = ""
+                inputText(input1)
+                back(input1)
+            }
+            else if (input1.getText().toString().isEmpty()){
+                //result.text = input1.getText().toString()
+                //val messageErr = "Введите второй операнд"
+                //result.text = input2.getText().toString()
+                //Toast.makeText(this, messageErr, Toast.LENGTH_SHORT).show()
+                input1.setError("Введите первый операнд")
+                inputText(input1)
+                back(input1)
+            }
+            else if (input2.getText().toString().trim().isEmpty())
+            {
+                //val messageErr = "Введите второй операнд"
+                //result.text = input2.getText().toString()
+                //Toast.makeText(this, messageErr, Toast.LENGTH_SHORT).show()
+                input2.setError("Введите второй операнд!")
+                inputText(input2)
+                back(input2)
+            }
+
+            //input1.setText("")
+            //input2.setText("")
+            //symbol.text = ""
+            //inputText(input1)
+            //back(input1)
         }
     }
 
