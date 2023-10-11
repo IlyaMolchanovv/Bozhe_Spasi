@@ -9,4 +9,7 @@ data class Cars(
     val cost: String,
     val mileage: String
 ) : Serializable {
+//    override fun toString(): String {
+//        return "Бренд\n$carBrand\nМодель\n$carModel\nЦвет\n$color\nПробег\n$mileage\nЦена\n$cost"
+//    }
 }

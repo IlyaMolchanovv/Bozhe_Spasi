@@ -5,7 +5,7 @@ import com.example.karusel.data.Cars
 
 class MainActivityModel : ViewModel() {
 
-    private val carsBank = mutableListOf<Cars>()
+    val carsBank = mutableListOf<Cars>()
     private var currentIndex = -1
 
     val currentCarBrand: String
@@ -86,5 +86,8 @@ class MainActivityModel : ViewModel() {
                 currentIndex = currentIndex % carsBank.size
             }
         }
+    }
+    override fun toString(): String {
+        return "Бренд\n$currentCarBrand\nМодель\n$currentCarModel\nЦвет\n$currentCarColor\nПробег\n$currentCarMileage\nЦена\n$currentCarCost"
     }
 }
